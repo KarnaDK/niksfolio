@@ -241,7 +241,48 @@ export default function Certifications() {
             Professional credentials validating my expertise and continuous learning in cybersecurity
           </p>
         </motion.div>
-
+        <motion.div
+          className="mt-20 max-w-4xl mx-auto bg-gray-800 rounded-lg p-8 border border-gray-700 mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <motion.div
+                className="text-4xl font-bold text-emerald-500"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                {certifications.length}
+              </motion.div>
+              <p className="text-gray-400 mt-2">Total Certifications</p>
+            </div>
+            <div>
+              <motion.div
+                className="text-4xl font-bold text-emerald-500"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+              >
+                {Object.keys(groupedCertifications).length}
+              </motion.div>
+              <p className="text-gray-400 mt-2">Certification Providers</p>
+            </div>
+            <div>
+              <motion.div
+                className="text-4xl font-bold text-emerald-500"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+              >
+                {new Date().getFullYear() - 2022}
+              </motion.div>
+              <p className="text-gray-400 mt-2">Years of Learning</p>
+            </div>
+          </div>
+        </motion.div>
         <motion.div
           className="max-w-5xl mx-auto space-y-8"
           ref={ref}
@@ -316,50 +357,6 @@ export default function Certifications() {
               </motion.div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Certificate counter */}
-        <motion.div
-          className="mt-16 max-w-4xl mx-auto bg-gray-800 rounded-lg p-6 border border-gray-700"
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-        >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div>
-              <motion.div
-                className="text-4xl font-bold text-emerald-500"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-              >
-                {certifications.length}
-              </motion.div>
-              <p className="text-gray-400 mt-2">Total Certifications</p>
-            </div>
-            <div>
-              <motion.div
-                className="text-4xl font-bold text-emerald-500"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
-                transition={{ duration: 0.5, delay: 0.7 }}
-              >
-                {Object.keys(groupedCertifications).length}
-              </motion.div>
-              <p className="text-gray-400 mt-2">Certification Providers</p>
-            </div>
-            <div>
-              <motion.div
-                className="text-4xl font-bold text-emerald-500"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-              >
-                {new Date().getFullYear() - 2022}
-              </motion.div>
-              <p className="text-gray-400 mt-2">Years of Learning</p>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>

@@ -100,38 +100,10 @@ export default function Navbar() {
             >
               <Link href="#contact">Get In Touch</Link>
             </Button>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="ml-2"
-              aria-label="Toggle Theme"
-            >
-              {isDarkMode ? (
-                <Sun className="h-5 w-5 text-yellow-400" />
-              ) : (
-                <Moon className="h-5 w-5 text-gray-400" />
-              )}
-            </Button>
           </div>
 
           {/* Mobile Navigation Toggle */}
           <div className="md:hidden flex items-center">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="mr-2"
-              aria-label="Toggle Theme"
-            >
-              {isDarkMode ? (
-                <Sun className="h-5 w-5 text-yellow-400" />
-              ) : (
-                <Moon className="h-5 w-5 text-gray-400" />
-              )}
-            </Button>
-
             <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu">
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>

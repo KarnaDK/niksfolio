@@ -21,11 +21,8 @@ export default function Skills() {
       skills: [
         "SIEM Management (Splunk)",
         "Network Security",
-        "Vulnerability Assessment",
-        "Threat Analysis",
-        "Risk Management",
-        "Incident Response (Conceptual)",
-        "Penetration Testing (Conceptual)",
+        "Penetration Testing",
+        "Vulnerability Assessment",     
         "Digital Forensics (Hardware-Based)",
         "Ethical Hacking (Learning)",
         "Cyber Intelligence Research",
@@ -33,14 +30,14 @@ export default function Skills() {
       ],
     },
     {
-      title: "Cloud Security",
+      title: "Tools & Platforms",
       icon: <Cloud className="h-6 w-6 text-emerald-500" />,
-      skills: ["AWS Security Principles", "Cloud Governance Principles"],
+      skills: ["Wireshark", "Nmap", "Splunk", "TryHackMe", "Canva", "Figma", "Git/GitHub"],
     },
     {
       title: "Programming & Scripting",
       icon: <Code className="h-6 w-6 text-emerald-500" />,
-      skills: ["Python", "Java", "Dart", "SQL", "Bash (Basic)"],
+      skills: ["Python", "Java","Javascript", "Dart", "SQL", "Bash (Basic)"],
     },
     {
       title: "Web Technologies",
@@ -48,14 +45,9 @@ export default function Skills() {
       skills: ["HTML", "CSS", "JavaScript"],
     },
     {
-      title: "Operating Systems",
-      icon: <Monitor className="h-6 w-6 text-emerald-500" />,
-      skills: ["Linux", "Windows"],
-    },
-    {
-      title: "Tools & Platforms",
+      title: "Cloud Security",
       icon: <Wrench className="h-6 w-6 text-emerald-500" />,
-      skills: ["Wireshark", "Nmap", "Splunk", "TryHackMe", "Canva", "Figma", "Git/GitHub"],
+      skills: ["AWS Security Principles", "Cloud Governance Principles"],
     },
     {
       title: "Professional Skills",

@@ -13,28 +13,25 @@ export default function Experience() {
 
   const experiences = [
     {
+      title: "Research Fellow",
+      company: "CyberPeace Center of Excellence, SAKEC",
+      location: "Mumbai",
+      period: "Jul 2024 – Present",
+      description: [
+        "Developed projects and conducted research work focused on Open-Source Intelligence (OSINT) and the MITRE ATT&CK framework.",
+        "Gained in-depth knowledge in cloud fundamentals, application security, app development, and basic penetration testing techniques",
+      ],
+      note: "Currently working on OSINT tools.", // Add this
+    },
+    {
       title: "Cybersecurity Fellow & Cyber Content Creator",
       company: "Deepcytes Cyber Labs UK",
       location: "Remote",
       period: "Jun 2024 – Dec 2024",
       description: [
         "Completed fellowship focused on Cyber Intelligence, contributing significantly to organizational research efforts and enriching comprehension of cybersecurity complexities.",
-        "Instrumental in the successful completion of several research tasks through diligence and hard work.",
-        "Consistently demonstrated excellence in completing tasks on time, showing unwavering dedication, effective team communication, and strong leadership skills.",
+        "Demonstrated excellence in research tasks with strong leadership, team communication, and consistent deadline adherence.",
         "Managed and curated engaging visual content (Canva, Figma) for DeepCytes Ventures' Instagram, enhancing brand awareness on cybersecurity topics.",
-      ],
-    },
-    {
-      title: "Research Fellow",
-      company: "CyberPeace Center of Excellence, SAKEC",
-      location: "Mumbai",
-      period: "[Start Date] – [End Date]",
-      note: "[User: Please update with specific dates]",
-      description: [
-        "Developed projects and conducted research work focused on [Specify research areas, e.g., threat intelligence, vulnerability analysis, cybersecurity awareness]",
-        "Note: [User: Please specify research focus]",
-        'Led the Nukkad Natak (Street Play) "Cyber Suraksha" initiative, raising awareness about Identity Theft across Mumbai communities.',
-        "Managed the graphic design team supporting the Nukkad Natak initiative, ensuring cohesive visual messaging.",
       ],
     },
     {

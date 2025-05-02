@@ -191,7 +191,7 @@ export default function Contact() {
                     <Mail className="h-5 w-5 text-emerald-500 mt-0.5" />
                     <div>
                       <h3 className="font-medium">Email</h3>
-                      <p className="text-gray-400">[Your Email]</p>
+                      <p className="text-gray-400">contact.nikhil02@gmail.com</p>
                     </div>
                   </motion.div>
 
@@ -205,7 +205,7 @@ export default function Contact() {
                       <h3 className="font-medium">LinkedIn</h3>
                       <p className="text-gray-400">
                         <a href="#" className="text-emerald-400 hover:text-emerald-300 transition-colors">
-                          [Your LinkedIn Profile]
+                          https://www.linkedin.com/in/heyynikhil/
                         </a>
                       </p>
                     </div>
@@ -221,7 +221,7 @@ export default function Contact() {
                       <h3 className="font-medium">GitHub</h3>
                       <p className="text-gray-400">
                         <a href="#" className="text-emerald-400 hover:text-emerald-300 transition-colors">
-                          [Your GitHub Profile]
+                        https://github.com/nikkk404
                         </a>
                       </p>
                     </div>

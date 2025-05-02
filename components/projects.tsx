@@ -1,21 +1,46 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, Shield, Bot } from "lucide-react"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import { useState } from "react"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Github, Shield, Bot } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useState, useEffect } from "react"; // Import useEffect
 
 export default function Projects() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
-  const [activeProject, setActiveProject] = useState<number | null>(null)
+  const [activeProject, setActiveProject] = useState<number | null>(null);
+  const [binaryPattern, setBinaryPattern] = useState<string>(""); // State for the binary pattern
+
+  useEffect(() => {
+    // Generate the binary pattern only on the client
+    const generateBinaryPattern = () => {
+      return Array(100)
+        .fill(0)
+        .map(() =>
+          Array(100)
+            .fill(0)
+            .map(() => Math.round(Math.random()))
+            .join(""),
+        )
+        .join("\n");
+    };
+
+    setBinaryPattern(generateBinaryPattern());
+  }, []); // Empty dependency array means this runs only once on mount
 
   const projects = [
     {
@@ -35,28 +60,8 @@ export default function Projects() {
       icon: <Shield className="h-10 w-10 text-emerald-500" />,
       links: {
         demo: "#",
-        github: "#",
+        github: "https://github.com/nikkk404/karna",
       },
-      codeSnippet: `
-// AI-powered fake news detection
-Future<bool> detectFakeNews(String newsText) async {
-  try {
-    final response = await http.post(
-      Uri.parse('https://api.gemini.com/v1/classify'),
-      headers: {'Authorization': 'Bearer $apiKey'},
-      body: jsonEncode({
-        'text': newsText,
-        'categories': ['real', 'fake']
-      }),
-    );
-    
-    final data = jsonDecode(response.body);
-    return data['category'] == 'fake';
-  } catch (e) {
-    print('Error detecting fake news: $e');
-    return false;
-  }
-}`,
     },
     {
       title: "Karna: Cybersecurity-Assisted Chatbot",
@@ -74,27 +79,10 @@ Future<bool> detectFakeNews(String newsText) async {
       icon: <Bot className="h-10 w-10 text-emerald-500" />,
       links: {
         demo: "#",
-        github: "#",
+        github: "https://github.com/nikkk404/karna-chatbot",
       },
-      codeSnippet: `
-// Secure API key management
-class SecureStorage {
-  static const _secureStorage = FlutterSecureStorage();
-  
-  static Future<void> storeApiKey(String key) async {
-    await _secureStorage.write(
-      key: 'api_key',
-      value: key,
-      aOptions: AndroidOptions(encryptedSharedPreferences: true),
-    );
-  }
-  
-  static Future<String?> getApiKey() async {
-    return await _secureStorage.read(key: 'api_key');
-  }
-}`,
     },
-  ]
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -104,7 +92,7 @@ class SecureStorage {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -113,22 +101,14 @@ class SecureStorage {
       y: 0,
       transition: { duration: 0.5 },
     },
-  }
+  };
 
   return (
     <section id="projects" className="py-20 bg-gray-900 relative">
       {/* Binary pattern background */}
       <div className="absolute inset-0 overflow-hidden opacity-5">
         <div className="text-xs font-mono text-emerald-500 whitespace-pre leading-tight p-4">
-          {Array(100)
-            .fill(0)
-            .map(() =>
-              Array(100)
-                .fill(0)
-                .map(() => Math.round(Math.random()))
-                .join(""),
-            )
-            .join("\n")}
+          {binaryPattern} {/* Use the state variable */}
         </div>
       </div>
 
@@ -214,7 +194,7 @@ class SecureStorage {
                       transition={{ duration: 0.3 }}
                     >
                       <pre className="text-xs text-emerald-400 font-mono">
-                        <code>{project.codeSnippet}</code>
+
                       </pre>
                     </motion.div>
                   )}
@@ -230,16 +210,6 @@ class SecureStorage {
                       Code
                     </Link>
                   </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/10 group"
-                  >
-                    <Link href={project.links.demo} className="flex items-center">
-                      <ExternalLink className="mr-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                      Demo
-                    </Link>
-                  </Button>
                 </CardFooter>
               </Card>
             </motion.div>
@@ -247,5 +217,5 @@ class SecureStorage {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

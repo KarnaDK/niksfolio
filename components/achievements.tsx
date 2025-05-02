@@ -73,53 +73,6 @@ export default function Achievements() {
             <Card className="bg-gray-800 border-gray-700 overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
-                  <motion.div
-                    animate={{
-                      rotate: [0, 10, -10, 10, 0],
-                      scale: [1, 1.1, 1],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Number.POSITIVE_INFINITY,
-                      repeatDelay: 5,
-                    }}
-                    className="flex-shrink-0"
-                  >
-                    <Trophy className="h-8 w-8 text-emerald-500 mt-1" />
-                  </motion.div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">TryHackMe Excellence</h3>
-                    <p className="text-gray-300">
-                      Ranked in the top 4% on TryHackMe, solving over 110 challenges across web exploitation, network
-                      security, and reverse engineering.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          <motion.div variants={itemVariants}>
-            <Card className="bg-gray-800 border-gray-700 overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
-              <CardContent className="p-6">
-                <div className="flex items-start space-x-4">
-                  <Award className="h-8 w-8 text-emerald-500 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Research Publication</h3>
-                    <p className="text-gray-300">
-                      Published Research Paper: 'ML-Based Network Anomaly Detection' in International Journal of
-                      Research Publication and Reviews (IJRPR), Volume: 5, Issue: 4, May 2024.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          <motion.div variants={itemVariants}>
-            <Card className="bg-gray-800 border-gray-700 overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
-              <CardContent className="p-6">
-                <div className="flex items-start space-x-4">
                   <Flag className="h-8 w-8 text-emerald-500 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="text-lg font-semibold mb-2">CTF Competitions</h3>
@@ -147,6 +100,9 @@ export default function Achievements() {
                       >
                         <div className="flex items-center mb-1">
                           <span className="font-medium text-gray-200">DawgCTF 2025 (Team Chanakya)</span>
+                          <Badge className="ml-2 bg-emerald-500/20 text-emerald-400 border-0 animate-pulse">
+                            149th global rank
+                          </Badge>
                         </div>
                         <p className="text-gray-300">Secured 149th place globally.</p>
                       </motion.div>
@@ -173,6 +129,35 @@ export default function Achievements() {
             <Card className="bg-gray-800 border-gray-700 overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
+                  <motion.div
+                    animate={{
+                      rotate: [0, 10, -10, 10, 0],
+                      scale: [1, 1.1, 1],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Number.POSITIVE_INFINITY,
+                      repeatDelay: 5,
+                    }}
+                    className="flex-shrink-0"
+                  >
+                    <Trophy className="h-8 w-8 text-emerald-500 mt-1" />
+                  </motion.div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">TryHackMe Excellence</h3>
+                    <p className="text-gray-300">
+                      Ranked in the top 4% on TryHackMe, solving over 110 challenges across web exploitation, network
+                      security, and reverse engineering.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <Card className="bg-gray-800 border-gray-700 overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+              <CardContent className="p-6">
+                <div className="flex items-start space-x-4">
                   <Lightbulb className="h-8 w-8 text-emerald-500 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Hackathon Success</h3>
@@ -187,6 +172,22 @@ export default function Achievements() {
             </Card>
           </motion.div>
 
+          <motion.div variants={itemVariants}>
+            <Card className="bg-gray-800 border-gray-700 overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+              <CardContent className="p-6">
+                <div className="flex items-start space-x-4">
+                  <Award className="h-8 w-8 text-emerald-500 mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Research Publication</h3>
+                    <p className="text-gray-300">
+                      Published Research Paper: 'ML-Based Network Anomaly Detection' in International Journal of
+                      Research Publication and Reviews (IJRPR), Volume: 5, Issue: 4, May 2024.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
           <motion.div variants={itemVariants}>
             <Card className="bg-gray-800 border-gray-700 overflow-hidden hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
               <CardContent className="p-6">
@@ -221,53 +222,7 @@ export default function Achievements() {
           </motion.div>
         </motion.div>
 
-        {/* Achievement visualization */}
-        <motion.div
-          className="mt-16 max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-        >
-          <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
-            <h3 className="text-xl font-semibold mb-6 text-center">Achievement Timeline</h3>
-            <div className="relative">
-              <div className="absolute left-0 right-0 h-1 bg-gray-700 top-4"></div>
-              <div className="flex justify-between relative">
-                {[2022, 2023, 2024, 2025].map((year, i) => (
-                  <div key={i} className="text-center relative">
-                    <motion.div
-                      className={`w-8 h-8 rounded-full ${i === 3 ? "bg-emerald-500" : "bg-gray-600"} mx-auto z-10 relative flex items-center justify-center`}
-                      initial={{ scale: 0 }}
-                      animate={inView ? { scale: 1 } : { scale: 0 }}
-                      transition={{ delay: 0.2 * i, duration: 0.5 }}
-                    >
-                      {i === 3 && <Trophy className="h-4 w-4 text-white" />}
-                    </motion.div>
-                    <motion.div
-                      className="mt-2 text-sm"
-                      initial={{ opacity: 0 }}
-                      animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                      transition={{ delay: 0.3 * i }}
-                    >
-                      {year}
-                    </motion.div>
-                    <motion.div
-                      className={`text-xs mt-1 max-w-[100px] mx-auto ${i === 3 ? "text-emerald-400" : "text-gray-400"}`}
-                      initial={{ opacity: 0 }}
-                      animate={inView ? { opacity: 1 } : { opacity: 0 }}
-                      transition={{ delay: 0.4 * i }}
-                    >
-                      {i === 0 && "Started Certifications"}
-                      {i === 1 && "HackerRank Achievements"}
-                      {i === 2 && "TryHackMe Top 4%"}
-                      {i === 3 && "CTF Competitions & Research Paper"}
-                    </motion.div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        
       </div>
     </section>
   )

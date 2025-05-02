@@ -78,11 +78,11 @@ export default function Hero() {
                   sequence={[
                     "BTech Cyber Security Student",
                     1000,
-                    "Security Operations Specialist",
+                    "Security Operations",
                     1000,
-                    "Threat Analysis Expert",
+                    "VAPT Analyst",
                     1000,
-                    "AI-Driven Security Developer",
+                    "Developer",
                     1000,
                     "Top 4% TryHackMe Rank",
                     1000,
@@ -198,26 +198,6 @@ export default function Hero() {
                   {cursorVisible && <span className="text-emerald-400">▋</span>}
                 </div>
               </div>
-
-              <motion.div
-                className="relative w-64 h-64 md:w-80 md:h-80 mx-auto mt-8 rounded-full overflow-hidden border-4 border-emerald-500/30 shadow-xl shadow-emerald-500/10"
-                animate={{
-                  boxShadow: [
-                    "0 0 20px rgba(16, 185, 129, 0.2)",
-                    "0 0 40px rgba(16, 185, 129, 0.4)",
-                    "0 0 20px rgba(16, 185, 129, 0.2)",
-                  ],
-                }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/20 to-gray-900"></div>
-                <div className="absolute inset-0 flex items-center justify-center text-6xl font-bold text-emerald-500">
-                  <Shield className="h-20 w-20 opacity-80" />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center text-6xl font-bold text-emerald-500">
-                  NM
-                </div>
-              </motion.div>
             </div>
           </motion.div>
         </div>
