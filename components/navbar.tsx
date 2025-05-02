@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Menu, X, Shield, Sun, Moon } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import { useTheme } from "next-themes"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Menu, X, Shield, Sun, Moon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -18,36 +18,39 @@ const navLinks = [
   { name: "Achievements", href: "#achievements" },
   { name: "Education", href: "#education" },
   { name: "Contact", href: "#contact" },
-]
+];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState("home")
-  const { theme, setTheme } = useTheme()
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const { theme, setTheme, resolvedTheme } = useTheme(); // Get resolvedTheme
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10)
+      setScrolled(window.scrollY > 10);
 
       // Determine active section
-      const sections = navLinks.map((link) => link.href.substring(1))
+      const sections = navLinks.map((link) => link.href.substring(1));
 
       for (const section of sections.reverse()) {
-        const element = document.getElementById(section)
+        const element = document.getElementById(section);
         if (element) {
-          const rect = element.getBoundingClientRect()
+          const rect = element.getBoundingClientRect();
           if (rect.top <= 100) {
-            setActiveSection(section)
-            break
+            setActiveSection(section);
+            break;
           }
         }
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Use resolvedTheme to determine the icon
+  const isDarkMode = resolvedTheme === "dark";
 
   return (
     <motion.nav
@@ -105,7 +108,7 @@ export default function Navbar() {
               className="ml-2"
               aria-label="Toggle Theme"
             >
-              {theme === "dark" ? (
+              {isDarkMode ? (
                 <Sun className="h-5 w-5 text-yellow-400" />
               ) : (
                 <Moon className="h-5 w-5 text-gray-400" />
@@ -122,7 +125,7 @@ export default function Navbar() {
               className="mr-2"
               aria-label="Toggle Theme"
             >
-              {theme === "dark" ? (
+              {isDarkMode ? (
                 <Sun className="h-5 w-5 text-yellow-400" />
               ) : (
                 <Moon className="h-5 w-5 text-gray-400" />
@@ -178,5 +181,5 @@ export default function Navbar() {
         </AnimatePresence>
       </div>
     </motion.nav>
-  )
+  );
 }
