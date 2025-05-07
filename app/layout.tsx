@@ -3,9 +3,12 @@ import './globals.css';
 import { ThemeProvider } from 'next-themes'; // Import ThemeProvider
 
 export const metadata: Metadata = {
-  title: 'v0 App',
+  title: 'NiksFolio',
   description: 'Created with v0',
   generator: 'v0.dev',
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({

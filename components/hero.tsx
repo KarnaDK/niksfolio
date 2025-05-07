@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Github, Linkedin, Mail, Shield, Terminal } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail, Shield, Terminal, Download } from "lucide-react"
 import Link from "next/link"
 import Navbar from "./navbar"
 import { motion } from "framer-motion"
@@ -137,12 +137,16 @@ export default function Hero() {
                 </Link>
               </Button>
               <Button
-                variant="outline"
-                className="border-emerald-500/30 hover:bg-emerald-500/10 transition-all duration-300"
+                className="bg-emerald-600 hover:bg-emerald-700 group transition-all duration-300 transform hover:translate-x-1"
               >
-                <Link href="#contact" className="flex items-center">
-                  Get In Touch
-                </Link>
+                <a
+                  href="/Nikhil Mokal.pdf"
+                  download="Nikhil Mokal.pdf"
+                  className="flex items-center"
+                >
+                  Download Resume
+                  <Download className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
             </div>
 
